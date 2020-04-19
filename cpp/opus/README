@@ -1,0 +1,34 @@
+### 搜狗输入法语音识别 Opus 编码使用文档
+
+##### 1.opus 源码下载
+- **版本**：1.3.1
+- [下载地址](https://opus-codec.org/release/stable/2019/04/12/libopus-1_3_1.html)
+
+##### 2.Android 动态库生成
+- 进入opus目录后，执行脚本
+
+```
+ ndk-build NDK_PROJECT_PATH=. APP_BUILD_SCRIPT=Android.mk
+```
+- 执行完毕后拷出 **libs** 目录内文件即可使用
+ 
+##### 3.语音识别统一编码参数
+
+SAMPLE_RATE | APPLICATION | CHANNELS | BITRATE | COMPLEXITY | FRAMESIZE | VBR
+---|---|---|---|---|---|---
+16000 | OPUS_APPLICATION_VOIP | 1 | 25000 |6|20ms|true
+
+##### 3.语音识别通信数据要求
+
+- 单包数据构成：**opus字符标识** + **opus数据长度** + **opus数据**
+```
+data:[ ‘opus’+opus_len+opus_bytes ]+……+[ ‘opus’+opus_len+opus_bytes ] 
+’opus' 4字节字符，opus_len为int_32
+```
+
+##### 4.客户端攒包逻辑
+- 目前参数下 **20ms** 输出一次压缩数据，输出数据非定长
+- 攒包：拼接指定输出个数的数据 如 **500ms** 通信一次则攒包 **500/20 = 25** 个
+
+##### 5.编译脚本以及jni
+- 编译opus的脚本参见Android.mk，jni所在位置：include/opus_sogou.cpp，opus_sogou.cpp在opus_sources.mk中引入进行编译，java native代码：https://git.sogou-inc.com/AndroidSpeechDeveloper/SpeechAPIInnerVersion_old_as/blob/dev_ime_optimization/src/com/sogou/speech/opus/OpusUtil.java

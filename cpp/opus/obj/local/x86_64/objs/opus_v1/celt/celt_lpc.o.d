@@ -1,0 +1,45 @@
+./obj/local/x86_64/objs/opus_v1/celt/celt_lpc.o: celt/celt_lpc.c \
+  celt/celt_lpc.h celt/arch.h include\opus_types.h \
+  include\opus_defines.h celt/fixed_generic.h celt/cpu_support.h \
+  celt/stack_alloc.h celt/mathops.h celt/entcode.h celt/ecintrin.h \
+  celt/os_support.h celt/pitch.h celt/modes.h celt/celt.h \
+  include\opus_custom.h celt/entenc.h celt/entdec.h celt/mdct.h \
+  celt/kiss_fft.h
+
+celt/celt_lpc.h:
+
+celt/arch.h:
+
+include\opus_types.h:
+
+include\opus_defines.h:
+
+celt/fixed_generic.h:
+
+celt/cpu_support.h:
+
+celt/stack_alloc.h:
+
+celt/mathops.h:
+
+celt/entcode.h:
+
+celt/ecintrin.h:
+
+celt/os_support.h:
+
+celt/pitch.h:
+
+celt/modes.h:
+
+celt/celt.h:
+
+include\opus_custom.h:
+
+celt/entenc.h:
+
+celt/entdec.h:
+
+celt/mdct.h:
+
+celt/kiss_fft.h:

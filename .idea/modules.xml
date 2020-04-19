@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SogouSpeechEncode.iml" filepath="$PROJECT_DIR$/SogouSpeechEncode.iml" group="SogouSpeechEncode" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="SogouSpeechEncode/app" />
+      <module fileurl="file://$PROJECT_DIR$/opus/opus.iml" filepath="$PROJECT_DIR$/opus/opus.iml" group="SogouSpeechEncode/opus" />
+      <module fileurl="file://$PROJECT_DIR$/speex/speex.iml" filepath="$PROJECT_DIR$/speex/speex.iml" group="SogouSpeechEncode/speex" />
+    </modules>
+  </component>
+</project>
